@@ -1,0 +1,211 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #16222A;  /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to left, #3A6073, #16222A);  /* Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to left, #3A6073, #16222A); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+
+}
+.main{
+    height: 480px;
+    width: 900px;
+    display: flex;
+    border-radius: 10px;
+    background: rgba(240, 240, 240, 0.05);
+    overflow: hidden;
+    box-shadow: 0.1px 4px 8px 5px rgba(0, 0, 0, 0.2);
+}
+/* tools styles */
+.tools{
+ height: 100%;
+ width: 10%;
+ box-shadow: 0.1px 4px 8px 5px rgba(0, 0, 0, 0.1);
+ background: rgba(225, 225, 225, 0.05);
+}
+.tools ul{
+    list-style: none;
+}
+.tools ul li{
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  flex-direction: column;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.tools ul .active_option {
+    background: rgba(255, 255, 255, 0.1);
+}
+.tools ul .active_option p{
+    opacity: 1;
+    margin-top: 8px;
+}
+.tools ul .active_option i {
+    color: #ff7043;
+}
+.tools ul li i{
+    color: rgba(255, 255, 255, 0.1);
+    margin-top: 10px;
+    font-size: 2rem;
+}
+.tools ul li:hover i {
+    color: #ff7043;
+}
+.tools ul li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+.tools ul li:hover p{
+    opacity: 1;
+    margin-top: 8px;
+}
+.tools ul li p{
+    opacity: 0;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* 
+**content style 
+*/
+
+.content{
+    position: relative;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.content .logo{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    letter-spacing: 3px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgba(255, 255, 255, 0.5);
+}
+.choose-img{
+    width: 70%;
+    /* height : 100px */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+.upload-img-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed rgba(255, 255, 255, 0.5);
+}
+p.explore{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+}
+.upload-img-box i{
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+#selectedImage{
+    display: none;
+}
+#webgl{
+    display: none;
+}
+.image_holder{
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 80%;
+}
+.image_holder img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+.image_holder button{
+    position: absolute;
+    top: -30px;
+    left: 0;
+    display: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    color: #ff7043;
+    font-size: 2rem;
+    background: none;
+    transform: rotate(270deg);
+}
+/* options */
+.options{
+    position: absolute;
+    transform: translateY(80px);
+    bottom: 0;
+    height: 50px;
+    width: 50%;
+    padding: 0 25px;
+    border-radius: 10px 10px 0 0 ;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0.1px 4px 8px 5px rgba(0, 0, 0, 0.1);
+}
+.options .active_controller{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+.option {
+    display: none;
+}
+.option p{
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.5);
+}
+/* range slider */
+input[type = 'range'] {
+      width: 80%;
+      height: 5px;
+      cursor: pointer;
+      outline: none;
+}
+
+/* reset */
+#reset {
+	position: absolute;
+	bottom: 10px;
+	right: 20px;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: 0.5s;
+	padding: 10px;
+	color: #17202A;
+	background: #FF7043;
+	transform: translateX(150px);
+	box-shadow: 0.1px 4px 8px 5px rgba(0, 0, 0, 0.1);
+}
+
+#reset span {
+	margin-right: 10px;
+}

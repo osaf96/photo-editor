@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Editor</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="main">
+        <div class="tools">
+            <ul>
+                <li>
+                    <i class='bx bx-brightness-half'></i>
+                    <p>brightness</p>
+                </li>
+
+                <li>
+                    <i class='bx bxs-brush'></i>
+                    <p>blur</p>
+                </li>
+
+                <li>
+                    <i class='bx bxs-collection'></i>
+                    <p>GreyScale</p>
+                </li>
+
+                <li>
+                    <i class='bx bxs-color-fill'></i>
+                    <p>Hue Rotate</p>
+                </li>
+
+                <li>
+                    <i class='bx bxs-magic-wand'></i>
+                    <p>Saturation</p>
+                </li>
+
+                <li onclick="Download_btn()">
+                    <i class='bx bx-export'></i>
+                    <p>Export</p>
+                </li>
+
+            </ul>
+        </div>
+        <div class="content">
+            <span class="logo" id="logo">Photo Editor</span>
+            <div class="choose-img">
+                <div class="upload-img-box">
+                    <i class='bx bxs-image-add'></i>
+                    <input type="file" name="selectedImage" id="selectedImage" accept="image/* , image/jpeg, image/png">
+                    <p class="explore">Choose image from folder</p>
+                </div>
+            </div>
+
+            <canvas id="webgl"></canvas>
+            <div class="image_holder">
+                <button id="remove_img_btn"><i class='bx bxs-message-square-x'></i></button>
+                <img src="" alt="img" id="image">
+            </div>
+
+
+            <div class="options">
+                <div class="option bar">
+                    <input type="range" name="brightness" id="brightness" class="range-slider" value="100" max="200"
+                        min="0">
+                    <p id="brightness-range" class="range-info">100</p>
+                </div>
+
+                <div class="option bar">
+                    <input type="range" name="blur" id="blur" class="range-slider" value="00" max="200" min="0">
+                    <p id="blur-range" class="range-info">100</p>
+                </div>
+
+                <div class="option bar">
+                    <input type="range" name="GreyScale" id="greyscale" class="range-slider" value="00" max="200"
+                        min="0">
+                    <p id="greyscale-range" class="range-info">100</p>
+                </div>
+
+                <div class="option bar">
+                    <input type="range" name="Hue Rotate" id="hue-rotate" class="range-slider" value="0" max="200"
+                        min="0">
+                    <p class="range-info" id="hue-range">100</p>
+                </div>
+
+                <div class="option bar">
+                    <input type="range" name="Saturation" id="saturation" class="range-slider" value="1" max="200"
+                        min="0">
+                    <p id="saturation-range" class="range-info">100</p>
+                </div>
+
+            </div>
+            <button type="reset" id="reset"><span>reset</span> <i class='bx bx-reset'></i> </button>
+        </div>
+
+    </div>
+
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
